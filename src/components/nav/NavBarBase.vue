@@ -35,7 +35,7 @@ const generateMenuConfig = (items: MenuItem[], parentRoute = ''): MenuItem[] =>
     <Menubar :model="generateMenuConfig(items)" class="items-center">
       <template #end>
         <ul class="flex items-center space-x-4">
-          <li>
+          <li class="mr-2">
             <ToggleDark />
           </li>
         </ul>
