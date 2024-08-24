@@ -4,8 +4,7 @@
 
 <template>
   <div class="wrapper">
-    <div class="inner">Root route</div>
-    <HelloWorld />
+    <div class="underline text-3xl">Root route</div>
   </div>
 </template>
 
