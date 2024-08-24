@@ -24,7 +24,7 @@ export default defineConfig({
     }),
     AutoImport({
       dts: true,
-      imports: ['vue', VueRouterAutoImports],
+      imports: ['vue', '@vueuse/core', '@vueuse/head', VueRouterAutoImports],
       dirs: ['src/composables', 'src/constants', 'src/helpers'],
     }),
   ],
