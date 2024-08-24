@@ -3,7 +3,15 @@
 </script>
 
 <template>
-  <div>Root route</div>
+  <div class="wrapper">
+    <div class="inner">Root route</div>
+  </div>
 </template>
 
-<style></style>
+<style lang="scss">
+.wrapper {
+  .inner {
+    font-size: 2rem;
+  }
+}
+</style>
