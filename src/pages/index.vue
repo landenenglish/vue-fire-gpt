@@ -5,6 +5,7 @@
 <template>
   <div class="wrapper">
     <div class="inner">Root route</div>
+    <HelloWorld />
   </div>
 </template>
 
