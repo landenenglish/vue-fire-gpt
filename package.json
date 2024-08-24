@@ -13,6 +13,9 @@
     "format": "prettier --write \"src/**/*.{ts,vue}\""
   },
   "dependencies": {
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/firebase": "^11.0.3",
+    "@vueuse/head": "^2.0.0",
     "axios": "^1.7.5",
     "lodash": "^4.17.21",
     "vue": "^3.4.38",
