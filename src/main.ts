@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import App from '@/App.vue'
 import PrimeVue from 'primevue/config'
-import Theme from '@/presets/aura'
+import Theme from '@/presets/lara'
 
 const app = createApp(App)
 app.use(createRouter({ history: createWebHistory(), routes }))
