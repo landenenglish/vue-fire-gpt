@@ -22,10 +22,11 @@ export default defineConfig({
       extensions: ['vue', 'ts'],
       dirs: ['src/components'],
     }),
+    // TODO: Fix auto imports
     AutoImport({
       dts: true,
       imports: ['vue', '@vueuse/core', '@vueuse/head', VueRouterAutoImports],
-      dirs: ['src/composables', 'src/constants', 'src/helpers'],
+      dirs: ['src/composable', 'src/constants', 'src/helpers'],
     }),
   ],
   build: {
