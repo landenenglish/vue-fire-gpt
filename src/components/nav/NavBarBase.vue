@@ -32,7 +32,7 @@ const generateMenuConfig = (items: MenuItem[], parentRoute = ''): MenuItem[] =>
 
 <template>
   <div class="card">
-    <Menubar :model="generateMenuConfig(items)" class="items-center">
+    <Menubar :model="generateMenuConfig(items)" class="items-center menubar">
       <template #end>
         <ul class="flex items-center space-x-4">
           <li class="mr-2">
@@ -43,3 +43,9 @@ const generateMenuConfig = (items: MenuItem[], parentRoute = ''): MenuItem[] =>
     </Menubar>
   </div>
 </template>
+
+<style lang="scss">
+.menubar {
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+</style>
