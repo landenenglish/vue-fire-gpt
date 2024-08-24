@@ -3,5 +3,13 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "include": [
+    // ...
+    "./typed-router.d.ts"
+  ],
+  "compilerOptions": {
+    "module": "es2020",
+    "moduleResolution": "Bundler"
+  }
 }
