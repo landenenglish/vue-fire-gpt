@@ -7,9 +7,10 @@
     "local": "vite",
     "dev": "vite",
     "network": "vite --host",
-    "format": "prettier --write \"src/**/*.{ts,vue}\"",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore --fix src && vue-tsc -b",
+    "format": "prettier --write \"src/**/*.{ts,vue}\""
   },
   "dependencies": {
     "axios": "^1.7.5",
@@ -20,7 +21,13 @@
   "devDependencies": {
     "@types/node": "^22.5.0",
     "@vitejs/plugin-vue": "^5.1.2",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.27.0",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
     "unplugin-auto-import": "^0.18.2",
