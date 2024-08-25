@@ -1,5 +1,5 @@
 import { FirebaseOptions, initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useAuth } from '@vueuse/firebase/useAuth'
 import { computed } from 'vue'
 
@@ -17,6 +17,12 @@ const firebaseApp = initializeApp(config)
 export const auth = getAuth(firebaseApp)
 
 export const { isAuthenticated, user } = useAuth(auth)
+
+export const hasAuthStateChanged = ref(false)
+
+onAuthStateChanged(auth, () => {
+  hasAuthStateChanged.value = true
+})
 
 export const userFirstName = computed(() => {
   const match = user.value?.displayName?.match(/(?<=\s|^)\w+(?=\s|$)/)

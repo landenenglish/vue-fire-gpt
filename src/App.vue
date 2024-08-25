@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import { isAuthenticated } from '@/firebase'
 import ConfirmDialog from 'primevue/confirmdialog'
+import { hasAuthStateChanged } from '@/firebase'
 </script>
 
 <template>
@@ -11,5 +12,5 @@ import ConfirmDialog from 'primevue/confirmdialog'
 
   <RouterView v-if="isAuthenticated" />
 
-  <SignInPage v-else />
+  <SignInPage v-else-if="hasAuthStateChanged" />
 </template>
