@@ -9,3 +9,17 @@
 body {
   @apply dark:bg-gray-800 dark:text-white;
 }
+
+:root {
+  --vh: 100%;
+}
+
+@supports (height: 100dvh) {
+  .full-height {
+    height: 90dvh;
+  }
+}
+
+.full-height {
+  height: calc(var(--vh, 1vh) * 90);
+}

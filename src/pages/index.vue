@@ -22,9 +22,9 @@ const responseText = computed(() => data.value?.response ?? '')
 </script>
 
 <template>
-  <div class="flex flex-col justify-between min-h-[90vh] p-4">
+  <div class="flex flex-col justify-between full-height p-4">
     <div class="w-full max-w-md mx-auto">
-      <Skeleton v-if="isLoading" width="100%" height="50vh"></Skeleton>
+      <Skeleton v-if="isLoading" width="100%" height="150px"></Skeleton>
       <div v-else>
         {{ responseText }}
       </div>

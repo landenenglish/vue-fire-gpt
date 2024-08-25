@@ -3,6 +3,8 @@ import { RouterView } from 'vue-router'
 import { isAuthenticated } from '@/firebase'
 import ConfirmDialog from 'primevue/confirmdialog'
 import { hasAuthStateChanged } from '@/firebase'
+
+onMounted(setAppHeight)
 </script>
 
 <template>
