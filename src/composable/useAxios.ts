@@ -121,9 +121,5 @@ export const useAxios = <
   }
 }
 
-/**
- * Initialize the useAxios composable with the provided default configuration.
- * @param defaultConfig The default configuration to initialize the useAxios composable with.
- */
 export const setDefaultuseAxiosConfig = (config: useAxiosConfig) =>
   Object.assign(defaultConfig, config)

@@ -25,9 +25,7 @@ const responseText = computed(() => data.value?.response ?? '')
   <div class="flex flex-col justify-between full-height p-4">
     <div class="w-full max-w-md mx-auto">
       <Skeleton v-if="isLoading" width="100%" height="150px"></Skeleton>
-      <div v-else>
-        {{ responseText }}
-      </div>
+      <Markdown v-else :markdown="responseText" />
     </div>
 
     <div class="w-full max-w-md mx-auto mt-4">

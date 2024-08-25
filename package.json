@@ -20,6 +20,7 @@
     "firebase": "^10.13.0",
     "firebaseui": "^6.1.0",
     "lodash": "^4.17.21",
+    "marked": "^14.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.5",
     "tailwindcss-primeui": "^0.3.4",
@@ -27,6 +28,7 @@
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
+    "@types/marked": "^5.0.2",
     "@types/node": "^22.5.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/eslint-config-prettier": "^9.0.0",
