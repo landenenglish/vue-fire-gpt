@@ -7,7 +7,7 @@
     "local": "vite",
     "dev": "vite",
     "network": "vite --host",
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.vue --ignore-path .gitignore --fix src && vue-tsc -b",
     "format": "prettier --write \"src/**/*.{ts,js,vue}\""
