@@ -2,6 +2,7 @@ import { FirebaseOptions, initializeApp } from 'firebase/app'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useAuth } from '@vueuse/firebase/useAuth'
 import { computed } from 'vue'
+import { initApi } from '@/helpers/api'
 
 const config: FirebaseOptions = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -18,10 +19,17 @@ export const auth = getAuth(firebaseApp)
 
 export const { isAuthenticated, user } = useAuth(auth)
 
+// @ts-expect-error - accessToken is not defined in the type definition
+const authToken = computed<string>(() => user.value?.accessToken ?? '')
+
 export const hasAuthStateChanged = ref(false)
 
 onAuthStateChanged(auth, () => {
   hasAuthStateChanged.value = true
+
+  if (authToken.value) {
+    initApi(authToken.value)
+  }
 })
 
 export const userFirstName = computed(() => {

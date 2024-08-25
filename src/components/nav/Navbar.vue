@@ -4,16 +4,16 @@ import Menubar from 'primevue/menubar'
 import { isAuthenticated, userFirstName } from '@/firebase'
 
 const items: MenuItem[] = [
-  {
-    label: 'Home',
-    icon: 'pi pi-home',
-    route: '/',
-  },
-  {
-    label: 'About',
-    icon: 'fas fa-info-circle',
-    route: '/about',
-  },
+  // {
+  //   label: 'Home',
+  //   icon: 'pi pi-home',
+  //   route: '/',
+  // },
+  // {
+  //   label: 'About',
+  //   icon: 'fas fa-info-circle',
+  //   route: '/about',
+  // },
 ] as const
 
 const router = useRouter()
