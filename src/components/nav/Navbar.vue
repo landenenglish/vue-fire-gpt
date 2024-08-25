@@ -2,7 +2,7 @@
 import type { MenuItem } from 'primevue/menuitem'
 import { useRouter } from 'vue-router'
 import Menubar from 'primevue/menubar'
-import ToggleDark from '../theme/ToggleDark.vue'
+import { isAuthenticated, user } from '@/firebase'
 
 const items: MenuItem[] = [
   {
@@ -32,11 +32,17 @@ const generateMenuConfig = (items: MenuItem[], parentRoute = ''): MenuItem[] =>
 
 <template>
   <div class="card">
-    <Menubar :model="generateMenuConfig(items)" class="items-center menubar">
+    <Menubar :model="isAuthenticated ? generateMenuConfig(items) : []" class="items-center menubar">
       <template #end>
-        <ul class="flex items-center space-x-4">
-          <li class="mr-2">
+        <ul class="flex items-center space-x-4 mr-2">
+          <li>
             <ToggleDark />
+          </li>
+          <li v-if="user?.displayName">
+            {{ user?.displayName }}
+          </li>
+          <li v-if="isAuthenticated">
+            <SignOutIcon />
           </li>
         </ul>
       </template>

@@ -3,3 +3,9 @@
 @tailwind utilities;
 @import 'primeicons/primeicons.css';
 @import '@/style/prime.scss';
+@import '@/style/helpers.scss';
+@import '@/style/variables.scss';
+
+body {
+  @apply dark:bg-gray-800 dark:text-white;
+}

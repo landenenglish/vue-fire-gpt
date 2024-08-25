@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { isAuthenticated } from '@/firebase'
 </script>
 
 <template>
-  <NavBarBase />
-  <RouterView />
+  <Navbar />
+  <RouterView v-if="isAuthenticated" />
+  <SignInPage v-else />
 </template>
-
-<style lang="scss">
-body {
-  @apply dark:bg-gray-800 dark:text-white;
-}
-</style>

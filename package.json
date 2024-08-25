@@ -17,6 +17,7 @@
     "@vueuse/firebase": "^11.0.3",
     "@vueuse/head": "^2.0.0",
     "axios": "^1.7.5",
+    "firebase": "^10.13.0",
     "lodash": "^4.17.21",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.5",

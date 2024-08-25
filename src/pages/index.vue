@@ -2,6 +2,6 @@
 
 <template>
   <div class="wrapper">
-    <div class="p-5 text-3xl">Hello World</div>
+    <div class="p-5 text-3xl">Coming Soon</div>
   </div>
 </template>
