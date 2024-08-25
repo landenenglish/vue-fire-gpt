@@ -1,6 +1,13 @@
 import { FirebaseOptions, initializeApp } from 'firebase/app'
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth'
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  GithubAuthProvider,
+  signInWithEmailAndPassword,
+} from 'firebase/auth'
 import { useAuth } from '@vueuse/firebase/useAuth'
+import { computed } from 'vue'
 
 const config: FirebaseOptions = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -15,5 +22,16 @@ const app = initializeApp(config)
 const auth = getAuth(app)
 
 export const { isAuthenticated, user } = useAuth(auth)
-export const signIn = () => signInWithPopup(auth, new GoogleAuthProvider())
+
+export const userFirstName = computed(() => {
+  const match = user.value?.displayName?.match(/(?<=\s|^)\w+(?=\s|$)/)
+  return match ? match[0] : ''
+})
+
+export const signInWithGoogle = () => signInWithPopup(auth, new GoogleAuthProvider())
+export const signInWithGithub = () => signInWithPopup(auth, new GithubAuthProvider())
+export const signInWithUsernameAndPassword = (email: string, password: string) => {
+  return signInWithEmailAndPassword(auth, email, password)
+}
+
 export const signOut = () => auth.signOut()

@@ -2,7 +2,7 @@
 import type { MenuItem } from 'primevue/menuitem'
 import { useRouter } from 'vue-router'
 import Menubar from 'primevue/menubar'
-import { isAuthenticated, user } from '@/firebase'
+import { isAuthenticated, userFirstName } from '@/firebase'
 
 const items: MenuItem[] = [
   {
@@ -35,11 +35,11 @@ const generateMenuConfig = (items: MenuItem[], parentRoute = ''): MenuItem[] =>
     <Menubar :model="isAuthenticated ? generateMenuConfig(items) : []" class="items-center menubar">
       <template #end>
         <ul class="flex items-center space-x-4 mr-2">
+          <li v-if="userFirstName">
+            {{ userFirstName }}
+          </li>
           <li>
             <ToggleDark />
-          </li>
-          <li v-if="user?.displayName">
-            {{ user?.displayName }}
           </li>
           <li v-if="isAuthenticated">
             <SignOutIcon />
