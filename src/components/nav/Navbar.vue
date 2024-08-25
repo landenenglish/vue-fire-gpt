@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { MenuItem } from 'primevue/menuitem'
-import { useRouter } from 'vue-router'
 import Menubar from 'primevue/menubar'
 import { isAuthenticated, userFirstName } from '@/firebase'
 
