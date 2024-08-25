@@ -5,6 +5,6 @@ import Button from 'primevue/button'
 
 <template>
   <div class="flex items-center justify-center h-screen space-x-4">
-    <Button @click="signInWithGoogle">Sign in with Google</Button>
+    <Button @click="signInWithGoogle()">Sign in with Google</Button>
   </div>
 </template>
